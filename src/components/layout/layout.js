@@ -20,7 +20,7 @@ class Layout extends React.Component {
 
     return (
       <Container maxWidth="lg">
-        <Box>
+        <Box style={{ height: '10vh' }}>
           <Toolbar className={classes.toolbarSecondary}>
             <Grid container spacing="1" alignItems="center">
               <Grid item>              <Link
@@ -51,7 +51,6 @@ class Layout extends React.Component {
         </Container>
         <StickyFooter />
       </Container>
-
     );
   }
 }
@@ -87,7 +86,7 @@ const styles = theme => ({
     cursor: 'pointer'
   },
   mainContainer: {
-    minHeight: '80vh'
+    minHeight: '79vh'
   }
 });
 
