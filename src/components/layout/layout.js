@@ -20,7 +20,7 @@ class Layout extends React.Component {
 
     return (
       <Container maxWidth="lg">
-        <Box my={1} >
+        <Box>
           <Toolbar className={classes.toolbarSecondary}>
             <Grid container spacing="1" alignItems="center">
               <Grid item>              <Link
@@ -46,11 +46,12 @@ class Layout extends React.Component {
           </Toolbar>
         </Box>
 
-        <Container maxWidth="md">
+        <Container maxWidth="lg" className={classes.mainContainer}>
           <main>{this.props.children}</main>
         </Container>
         <StickyFooter />
       </Container>
+
     );
   }
 }
@@ -75,11 +76,6 @@ const styles = theme => ({
       textDecoration: "none",
     }
   },
-  title: {
-    color: "black",
-    fontWeight: "900",
-    cursor: 'pointer'
-  },
   root: {
     display: 'flex',
     '& > *': {
@@ -90,30 +86,8 @@ const styles = theme => ({
     paddingRight: theme.spacing(3),
     cursor: 'pointer'
   },
-  smallTitleIcon: {
-    marginTop: '1em',
-    width: 50, height: 50, borderRadius: 50 / 2,
-  },
-  TitleIcon: {
-    // marginRight: '1em',
-    width: 60, height: 60, borderRadius: 60 / 2
-  },
-  imageIcon: {
-    position: "absolute",
-    padding: '0.2em',
-    // top: "0.5em",
-    bottom: '-2em',
-    right: '2em',
-    height: '5em',
-    width: '5em',
-    // boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
-  },
-  verticalAlign: {
-    backgroundColor: `rgba(245, 245, 245, 0)`,
-    display: `flex`,
-    justifyContent: `center`,
-    alignItems: `center`,
-    height: '0em',
+  mainContainer: {
+    minHeight: '80vh'
   }
 });
 
