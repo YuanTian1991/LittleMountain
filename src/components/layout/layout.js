@@ -30,7 +30,7 @@ class Layout extends React.Component {
                 Little Mountain
               </Link></Grid>
               <Grid>
-                <p style={{ fontSize: '0.85em', color: 'darkgrey' }}> &nbsp;&nbsp;&nbsp;A set of online Bioinformatic Analysis Tool </p>
+                <p style={{ fontSize: '0.85em', color: 'darkgrey' }}> &nbsp;&nbsp;&nbsp;A set of simple, easy, and transparent online Bioinformatic Analysis Tool </p>
               </Grid>
             </Grid>
 
