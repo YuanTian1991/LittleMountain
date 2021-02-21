@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { CssBaseline, Container, Typography, Paper, Tabs, Tab, Box, TextField, Button } from '@material-ui/core';
+
+import { readString } from 'react-papaparse'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -15,9 +17,9 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
+        <div p={3}>
+          {children}
+        </div>
       )}
     </div>
   );
@@ -29,31 +31,44 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     textAlign: 'left'
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+  resize: {
+    fontSize: '12px',
+    whiteSpace: 'nowrap'
   },
 }));
 
 export default function PvalueDistribution() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [PasteText, setPasteText] = React.useState('')
+
+  useEffect(() => {
+    // readString(PasteText, {
+    //   head: true,
+    //   step: (row) => {
+    //     console.log('Row:', row.data)
+    //   },
+    //   complete: () => {
+    //     console.log('All done!')
+    //   }
+    // })
+    const result = readString(PasteText, {
+      // header: true
+    })
+    console.log(result)
+  }, [PasteText])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handlePasteChange = (event) => {
+    setPasteText(event.target.value)
+  }
 
   return (
     <div className={classes.root}>
@@ -87,6 +102,13 @@ export default function PvalueDistribution() {
               multiline
               rows={10}
               rowsMax={10}
+              value={(PasteText.length > 1000 ? PasteText.substring(0, 1000 - 3) + '\n...\n To prevent your browser crash, we just show top 1000 charater here. Please check table on the right' : PasteText)}
+              onChange={handlePasteChange}
+              InputProps={{
+                classes: {
+                  input: classes.resize,
+                },
+              }}
               InputLabelProps={{
                 shrink: true
               }}

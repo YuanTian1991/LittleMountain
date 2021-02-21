@@ -22,7 +22,7 @@ class Layout extends React.Component {
       <Container maxWidth="lg">
         <Box style={{ height: '10vh' }}>
           <Toolbar className={classes.toolbarSecondary}>
-            <Grid container spacing="1" alignItems="center">
+            <Grid container alignItems="center">
               <Grid item>              <Link
                 to='/'
                 className={classes.Link}
