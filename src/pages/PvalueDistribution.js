@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { CssBaseline, Container, Typography, Paper, Tabs, Tab, Box, TextField, Button } from '@material-ui/core';
 
 import { readString } from 'react-papaparse'
+const clipboardy = require('clipboardy');
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,7 +47,7 @@ export default function PvalueDistribution() {
   const [value, setValue] = React.useState(0);
   const [PasteText, setPasteText] = React.useState('')
 
-  useEffect(() => {
+  // useEffect(() => {
     // readString(PasteText, {
     //   head: true,
     //   step: (row) => {
@@ -56,11 +57,19 @@ export default function PvalueDistribution() {
     //     console.log('All done!')
     //   }
     // })
-    const result = readString(PasteText, {
-      // header: true
-    })
-    console.log(result)
-  }, [PasteText])
+    // const result = readString(PasteText, {
+    //   header: true,
+    //   skipEmptyLines: true,
+    // chunk: function(result) {
+    //   console.log(result)
+    // },
+    // chunkSize: 1024 * 1024, // 10MB
+    // complete: function() {
+    //   console.log('Done!')
+    // }
+    // })
+    // console.log(result)
+  // }, [PasteText])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -70,6 +79,20 @@ export default function PvalueDistribution() {
     setPasteText(event.target.value)
   }
 
+  const handleReadClipboard = () => {
+    clipboardy.read()
+    .then((content) => {
+      handlePapaparse(content)
+    })
+  }
+
+  const handlePapaparse = (longString) => {
+    const result = readString(longString, {
+      header: true
+    })
+    console.log(result)
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -77,10 +100,11 @@ export default function PvalueDistribution() {
         <Typography variant="h4" gutterBottom style={{ fontWeight: "900" }}>
           P Value Distribution
         </Typography>
-        <Typography variant="body1">
+        {/* <Typography variant="body1">
           Paste a table contain just one "pValue" column header into below textArea.
-        </Typography>
+        </Typography> */}
 
+        {/* <Button onClick={handleReadClipboard}> Test Read Clip</Button> */}
 
         <Paper square elevation={0} style={{ marginTop: '1em', backgroundColor: 'rgb(0,0,0,0)' }}>
           <Tabs
@@ -90,11 +114,14 @@ export default function PvalueDistribution() {
             onChange={handleChange}
             aria-label="disabled tabs example"
           >
+            <Tab label="Read Clipboard" />
+            <Tab label="Read CSV" />
+            <Tab label="Read Google Sheets" />
             <Tab label="Paste Area" />
             <Tab label="Table" />
           </Tabs>
 
-          <TabPanel value={value} index={0}>
+          <TabPanel value={value} index={3}>
             <TextField
               autoFocus
               variant="outlined"
