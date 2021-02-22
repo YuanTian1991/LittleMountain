@@ -1,0 +1,36 @@
+.BaseTable__row-cell {
+  border-right: 0.1px solid #eeeeee;
+}
+
+.BaseTable__header-row {
+  background-color: white;
+  border-bottom: 0.1px solid #eeeeee;
+  border-top: 0.1px solid #eeeeee;
+}
+
+.BaseTable__header-cell {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.BaseTable__header-cell:hover {
+  background-color: white;
+  color: black;
+}
+.BaseTable__sort-indicator {
+  color: black;
+}
+
+.BaseTable__header-row--resizing .BaseTable__header-cell {
+  background-color: white;
+  color: black;
+  cursor: col-resize;
+}
+
+.BaseTable__header-cell--sortable:not(.BaseTable__header-cell--sorting):hover
+  .BaseTable__sort-indicator {
+  display: block;
+  color: black;
+}

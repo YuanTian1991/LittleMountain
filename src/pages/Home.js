@@ -21,7 +21,7 @@ export default function Home() {
     {
       title: 'P value Distribution',
       link: 'PvalueDistribution',
-      des: 'The first demo for little mountain, which reads a table contains p-value, and return the distribution of this p value. Also it returns various adjusted p value distribution. Finally you can download filtered csv.'
+      des: 'The first demo for little mountain, which reads a table contains p-value, and return the distribution of this p value. Also it returns various adjusted p value distribution.'
     }
   ]
 
@@ -35,7 +35,7 @@ export default function Home() {
               return (
                 <Grid key={index} item xs={6} md={4}>
                   <Card elevation={1} className={classes.card}>
-                    <CardActionArea style={{ height: '250px' }} component={Link} to={item.link}>
+                    <CardActionArea style={{ height: '300px' }} component={Link} to={item.link}>
                       <CardMedia
                         component="img"
                         alt="Contemplative Reptile"
@@ -45,11 +45,11 @@ export default function Home() {
                         style={{ borderBottom: '1px solid #f4f4f4' }}
                       />
                       <CardContent>
-                        <Typography component="div">
-                          <Box fontWeight={700} >
+                        <Typography component="div" color="primary">
+                          <Box fontWeight={500} style={{ marginBottom: '0.5em', color: 'black' }}>
                             {item.title}
                           </Box>
-                          <Box fontWeight="fontWeightLight" fontSize="13px">
+                          <Box fontSize="15px" style={{ color: 'darkgrey' }}>
                             {item.des}
                           </Box>
                         </Typography>
