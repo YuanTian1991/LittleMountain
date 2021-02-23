@@ -5,7 +5,7 @@
 .BaseTable__header-row {
   background-color: white;
   border-bottom: 0.1px solid #eeeeee;
-  border-top: 0.1px solid #eeeeee;
+  /* border-top: 0.1px solid #eeeeee; */
 }
 
 .BaseTable__header-cell {

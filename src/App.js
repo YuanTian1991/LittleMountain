@@ -1,6 +1,6 @@
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -26,7 +26,7 @@ const outerTheme = createMuiTheme({
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <ThemeProvider theme={outerTheme}>
           <Layout >
             <Switch>
@@ -35,7 +35,7 @@ function App() {
             </Switch>
           </Layout>
         </ThemeProvider>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

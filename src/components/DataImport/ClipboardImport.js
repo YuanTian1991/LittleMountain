@@ -2,12 +2,20 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid } from '@material-ui/core';
 
+import { useDispatch } from 'react-redux';
+import { ReadFromClipboard } from '../../redux/actions/tableData';
+
 const useStyles = makeStyles((theme) => ({
 
 }));
 
 export default function ClipboardImport() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const handleReadClipboard = () => {
+    dispatch(ReadFromClipboard())
+  }
 
   return (
     <div style={{ textAlign: 'center', marginTop: "0px", padding: '2em' }}>
@@ -17,7 +25,7 @@ export default function ClipboardImport() {
             variant="outlined"
             color="primary"
             style={{ fontWeight: '900' }}
-          // onClick={handleReadClipboard}
+            onClick={handleReadClipboard}
           >
             Read from Clipboard </Button>
         </Grid>
