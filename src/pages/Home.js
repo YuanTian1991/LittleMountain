@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, Button, CardActionArea, CardMedia, CardContent, Typography, Grid, Container, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+import myimage from '../assets/images/PvalueHist.png'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -40,8 +42,7 @@ export default function Home() {
                         component="img"
                         alt="Contemplative Reptile"
                         height="120"
-                        image="https://blog.datawrapper.de/img/posts/introducing-scatter-plot-1.gif"
-                        title="Contemplative Reptile"
+                        image={myimage}
                         style={{ borderBottom: '1px solid #f4f4f4' }}
                       />
                       <CardContent>
