@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/LittleMountain/static/css/main.fe956fca.chunk.css",
+    "main.js": "/LittleMountain/static/js/main.0826b6f2.chunk.js",
+    "main.js.map": "/LittleMountain/static/js/main.0826b6f2.chunk.js.map",
+    "runtime-main.js": "/LittleMountain/static/js/runtime-main.524bb939.js",
+    "runtime-main.js.map": "/LittleMountain/static/js/runtime-main.524bb939.js.map",
+    "static/css/2.dd52da21.chunk.css": "/LittleMountain/static/css/2.dd52da21.chunk.css",
+    "static/js/2.c167e5d3.chunk.js": "/LittleMountain/static/js/2.c167e5d3.chunk.js",
+    "static/js/2.c167e5d3.chunk.js.map": "/LittleMountain/static/js/2.c167e5d3.chunk.js.map",
+    "static/js/3.a2b5d782.chunk.js": "/LittleMountain/static/js/3.a2b5d782.chunk.js",
+    "static/js/3.a2b5d782.chunk.js.map": "/LittleMountain/static/js/3.a2b5d782.chunk.js.map",
+    "index.html": "/LittleMountain/index.html",
+    "static/css/2.dd52da21.chunk.css.map": "/LittleMountain/static/css/2.dd52da21.chunk.css.map",
+    "static/css/main.fe956fca.chunk.css.map": "/LittleMountain/static/css/main.fe956fca.chunk.css.map",
+    "static/js/2.c167e5d3.chunk.js.LICENSE.txt": "/LittleMountain/static/js/2.c167e5d3.chunk.js.LICENSE.txt",
+    "static/media/PvalueHist.9959fec7.png": "/LittleMountain/static/media/PvalueHist.9959fec7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.524bb939.js",
+    "static/css/2.dd52da21.chunk.css",
+    "static/js/2.c167e5d3.chunk.js",
+    "static/css/main.fe956fca.chunk.css",
+    "static/js/main.0826b6f2.chunk.js"
+  ]
+}
