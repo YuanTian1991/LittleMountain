@@ -35,7 +35,7 @@ export default function ChartPanel() {
     if (loaded) {
       RestParameters()
       try {
-        var newPlot = CreatePvalueHist(tableColumn, tableRow, { name: 'P_Value', key: 'PValue' });
+        var newPlot = CreatePvalueHist(tableColumn, tableRow, { name: 'P_Value', key: 'P_Value' });
 
         setOption(newPlot.option);
         // setEventsDict(newPlot.EventsDict);

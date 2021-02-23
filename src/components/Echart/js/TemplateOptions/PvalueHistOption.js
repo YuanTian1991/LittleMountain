@@ -17,7 +17,7 @@ export default {
     },
     formatter: 'Data Value (x-axis): {b} <br/> {a} (y-axis): {c0} -  {c1} - {c2}',
   },
-  color: ['#212121'],
+  color: ['#f2cc8f'],
   grid: {
     left: '6%',
     right: '3%',

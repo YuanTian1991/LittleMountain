@@ -17,7 +17,7 @@ const outerTheme = createMuiTheme({
       main: grey[800],
     },
     secondary: {
-      main: amber[500],
+      main: '#f2cc8f',
     },
   },
 });
